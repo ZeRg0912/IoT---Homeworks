@@ -20,16 +20,18 @@ void setup() {
 }
 
 void StopButton() {
-  int current_state = digitalRead(STOP);
-  if (stop_last != current_state) {
-    delay(50);
-    current_state = digitalRead(STOP);
-    if (stop_last == HIGH && current_state == LOW) {
-      deci_seconds = 0;
-      last_millis = millis();
+  if (!running) {
+    int current_state = digitalRead(STOP);
+    if (stop_last != current_state) {
+      delay(50);
+      current_state = digitalRead(STOP);
+      if (stop_last == HIGH && current_state == LOW) {
+        deci_seconds = 0;
+        last_millis = millis();
+      }
     }
+    stop_last = current_state;
   }
-  stop_last = current_state;
 }
 
 void StartButton() {
