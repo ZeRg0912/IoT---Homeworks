@@ -1,0 +1,129 @@
+{
+  "version": 1,
+  "author": "Sergey Polevoy",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -389.9,
+      "left": 84.15,
+      "rotate": 180,
+      "attrs": { "value": "300" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -313.1,
+      "left": 84.15,
+      "rotate": 180,
+      "attrs": { "value": "300" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -332.3,
+      "left": 84.15,
+      "rotate": 180,
+      "attrs": { "value": "300" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": -351.5,
+      "left": 84.15,
+      "rotate": 180,
+      "attrs": { "value": "300" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r5",
+      "top": -428.3,
+      "left": 84.15,
+      "rotate": 180,
+      "attrs": { "value": "300" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r6",
+      "top": -409.1,
+      "left": 84.15,
+      "rotate": 180,
+      "attrs": { "value": "300" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r7",
+      "top": -370.7,
+      "left": 84.15,
+      "rotate": 180,
+      "attrs": { "value": "300" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r8",
+      "top": -293.35,
+      "left": 85,
+      "rotate": 180,
+      "attrs": { "value": "300" }
+    },
+    {
+      "type": "wokwi-led-bar-graph",
+      "id": "bargraph1",
+      "top": -408,
+      "left": 235.6,
+      "rotate": 180,
+      "attrs": { "color": "lime" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r9",
+      "top": -447.5,
+      "left": 84.15,
+      "rotate": 180,
+      "attrs": { "value": "300" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r10",
+      "top": -466.7,
+      "left": 84.15,
+      "rotate": 180,
+      "attrs": { "value": "300" }
+    }
+  ],
+  "connections": [
+    [ "bargraph1:A8", "bargraph1:A7", "red", [ "v0" ] ],
+    [ "bargraph1:A7", "bargraph1:A6", "red", [ "v0" ] ],
+    [ "bargraph1:A6", "bargraph1:A5", "red", [ "v0" ] ],
+    [ "bargraph1:A5", "bargraph1:A4", "red", [ "v0" ] ],
+    [ "bargraph1:A4", "bargraph1:A3", "red", [ "v0" ] ],
+    [ "bargraph1:A3", "bargraph1:A2", "red", [ "v0" ] ],
+    [ "bargraph1:A2", "bargraph1:A1", "red", [ "v0" ] ],
+    [ "bargraph1:A8", "bargraph1:A9", "red", [ "v0" ] ],
+    [ "bargraph1:A9", "bargraph1:A10", "red", [ "v0" ] ],
+    [ "bargraph1:C10", "r10:1", "yellow", [ "v-57.59", "h-97.07" ] ],
+    [ "bargraph1:C1", "r8:1", "yellow", [ "h-0.22", "v28.8" ] ],
+    [ "bargraph1:C9", "r9:1", "yellow", [ "h-9.82", "v-47.99", "h-87.25" ] ],
+    [ "bargraph1:C8", "r5:1", "yellow", [ "v0.01", "h-19.42", "v-38.95" ] ],
+    [ "bargraph1:C7", "r6:1", "yellow", [ "v0.01", "h-29.02", "v-29.35" ] ],
+    [ "bargraph1:C6", "r1:1", "yellow", [ "v0.01", "h-38.62", "v-19.75" ] ],
+    [ "bargraph1:C2", "r2:1", "yellow", [ "h-77.02", "v18.65" ] ],
+    [ "bargraph1:C3", "r3:1", "yellow", [ "h-86.62", "v9.05" ] ],
+    [ "bargraph1:C4", "r4:1", "yellow", [ "h-38.62", "v-0.55" ] ],
+    [ "bargraph1:C5", "r7:1", "yellow", [ "v0.01", "h-48.22", "v-10.15" ] ],
+    [ "bargraph1:A1", "uno:5V", "red", [ "h96", "v480", "h-156.8" ] ],
+    [ "uno:13", "r10:2", "green", [ "v-181.8", "h-144.2", "v-288.55" ] ],
+    [ "uno:12", "r9:2", "green", [ "v-191.4", "h-144.1", "v-259.75" ] ],
+    [ "uno:11", "r5:2", "green", [ "v-201", "h-144", "v-230.95" ] ],
+    [ "uno:10", "r6:2", "green", [ "v-210.6", "h-143.9", "v-202.15" ] ],
+    [ "uno:9", "r1:2", "green", [ "v-220.2", "h-143.8", "v-173.35" ] ],
+    [ "uno:8", "r7:2", "green", [ "v-229.8", "h-144.2", "v-144.55" ] ],
+    [ "uno:7", "r4:2", "green", [ "v-239.4", "h-150.6", "v-115.75" ] ],
+    [ "uno:6", "r3:2", "green", [ "v-249", "h-150.5", "v-86.95" ] ],
+    [ "uno:5", "r2:2", "green", [ "v-258.6", "h-140.8", "v-58.15" ] ],
+    [ "uno:4", "r8:2", "green", [ "v-268.2", "h-132.3" ] ]
+  ],
+  "dependencies": {}
+}

@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "author": "Sergey Polevoy",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno1", "top": 125.4, "left": -10.2, "attrs": {} },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": -226.97, "left": 35.2, "attrs": {} },
+    {
+      "type": "wokwi-analog-joystick",
+      "id": "joystick1",
+      "top": -58.2,
+      "left": 274.2,
+      "attrs": {}
+    },
+    { "type": "wokwi-led", "id": "led1", "top": -138, "left": -5.8, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -24,
+      "left": -10.15,
+      "rotate": 90,
+      "attrs": { "value": "300" }
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": 11.88,
+      "left": -129.9,
+      "rotate": 270,
+      "attrs": { "delayTime": "1"}
+    }
+  ],
+  "connections": [
+    [ "lcd1:VSS", "uno1:GND.1", "black", [ "v201.6", "h38.1" ] ],
+    [ "lcd1:K", "lcd1:VSS", "black", [ "v9.6", "h-144" ] ],
+    [ "lcd1:VDD", "uno1:5V", "red", [ "v172.8", "h0.1", "v19.2", "h-105.6", "v249.6", "h178.6" ] ],
+    [ "lcd1:A", "lcd1:VDD", "red", [ "v19.2", "h-124.9" ] ],
+    [ "lcd1:RW", "lcd1:VSS", "black", [ "v28.8", "h-38.5" ] ],
+    [ "lcd1:RS", "uno1:7", "orange", [ "v172.8", "h83.1" ] ],
+    [ "lcd1:E", "uno1:6", "orange", [ "v163.2", "h73.1" ] ],
+    [ "lcd1:D4", "uno1:5", "orange", [ "v153.6", "h34.6" ] ],
+    [ "lcd1:D5", "uno1:4", "orange", [ "v144", "h34.6" ] ],
+    [ "lcd1:D6", "uno1:3", "orange", [ "v134.4", "h34.6" ] ],
+    [ "lcd1:D7", "uno1:2", "orange", [ "v124.8", "h34.6" ] ],
+    [ "joystick1:VCC", "lcd1:VDD", "red", [ "v9.6", "h-38.4", "v-144", "h-192.1" ] ],
+    [ "joystick1:GND", "lcd1:K", "black", [ "v9.6", "h38.4", "v-153.6", "h-28.8" ] ],
+    [ "joystick1:VERT", "uno1:A5", "green", [ "v278.4", "h-67.2" ] ],
+    [ "joystick1:HORZ", "uno1:A4", "green", [ "v288", "h-67.2" ] ],
+    [ "joystick1:SEL", "uno1:A3", "green", [ "v297.6", "h-28.8" ] ],
+    [ "led1:A", "r1:1", "red", [ "v0" ] ],
+    [ "led1:C", "lcd1:VSS", "black", [ "v28.8", "h48.4" ] ],
+    [ "r1:2", "uno1:13", "green", [ "v104.4", "h95.6" ] ],
+    [ "pir1:VCC", "uno1:5V", "red", [ "h9.6", "v278.4", "h172.8" ] ],
+    [ "pir1:GND", "lcd1:VSS", "black", [ "h9.6", "v-114.94", "h96" ] ],
+    [ "pir1:OUT", "uno1:12", "gold", [ "h124.8", "v38.54", "h38.4", "v38.4" ] ]
+  ],
+  "dependencies": {}
+}
