@@ -17,4 +17,4 @@
 
 Проведите моделирование работы в симуляторе.<br>
 
-[Схема](7_segments_block_stopwatch.jpg "Схема")
+![Схема](7_segments_block_stopwatch.jpg "Схема")
