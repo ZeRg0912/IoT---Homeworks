@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "author": "Sergey Polevoy",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno1", "top": 154.2, "left": -39, "attrs": {} },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "stepper1",
+      "top": -159.59,
+      "left": 86.83,
+      "attrs": { "size": "17", "display": "angle", "arrow": "orange" }
+    },
+    { "type": "wokwi-a4988", "id": "drv1", "top": 53, "left": 139.6, "rotate": 270, "attrs": {} }
+  ],
+  "connections": [
+    [ "drv1:RESET", "drv1:SLEEP", "green", [ "v9.6", "h9.6" ] ],
+    [ "uno1:3", "drv1:STEP", "green", [ "v-28.8", "h4" ] ],
+    [ "uno1:2", "drv1:DIR", "green", [ "v-19.2", "h4.1" ] ],
+    [ "stepper1:A-", "drv1:2B", "green", [ "v0" ] ],
+    [ "stepper1:A+", "drv1:2A", "green", [ "v0" ] ],
+    [ "stepper1:B+", "drv1:1A", "green", [ "v0" ] ],
+    [ "stepper1:B-", "drv1:1B", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

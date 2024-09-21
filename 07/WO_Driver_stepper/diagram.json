@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "author": "Sergey Polevoy",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno1", "top": 197.52, "left": 34.87, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 101.42,
+      "left": -57.63,
+      "rotate": 90,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 101.42,
+      "left": -134.43,
+      "rotate": 90,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": 101.42,
+      "left": -9.63,
+      "rotate": 90,
+      "attrs": { "color": "green" }
+    },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 196.22, "left": 322.67, "attrs": {} },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "stepper1",
+      "top": -154.07,
+      "left": 169.7,
+      "attrs": { "size": "17", "display": "steps", "arrow": "black" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 47.87,
+      "left": -176.33,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 28.67,
+      "left": -176.33,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 9.47,
+      "left": -176.33,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "pot1:GND", "uno1:GND.3", "black", [ "v163.2", "h-96" ] ],
+    [ "pot1:VCC", "uno1:5V", "red", [ "v182.4", "h-164" ] ],
+    [ "pot1:SIG", "uno1:A5", "green", [ "v153.6", "h-67.6" ] ],
+    [ "btn2:2.l", "r1:2", "green", [ "v0" ] ],
+    [ "btn1:2.l", "r2:2", "green", [ "v0" ] ],
+    [ "r3:2", "btn3:2.l", "green", [ "v0", "h114" ] ],
+    [ "r3:1", "r2:1", "black", [ "v0" ] ],
+    [ "r2:1", "r1:1", "black", [ "v0" ] ],
+    [ "r1:1", "uno1:GND.3", "black", [ "v374.4", "h345.6" ] ],
+    [ "btn2:1.r", "uno1:5V", "red", [ "v249.8", "h259.2" ] ],
+    [ "btn1:1.r", "btn2:1.r", "red", [ "v29", "h-76.8" ] ],
+    [ "btn3:1.r", "btn2:1.r", "red", [ "v29", "h-57.6" ] ],
+    [ "stepper1:A-", "uno1:7", "green", [ "v0", "h-19.2" ] ],
+    [ "stepper1:A+", "uno1:6", "green", [ "v9.6", "h-9.6" ] ],
+    [ "uno1:5", "stepper1:B+", "green", [ "v-153", "h3.2" ] ],
+    [ "uno1:4", "stepper1:B-", "green", [ "v-143.4", "h12.9" ] ],
+    [ "btn3:2.l", "uno1:9", "green", [ "v-76.8", "h-0.2" ] ],
+    [ "btn1:2.l", "uno1:10", "green", [ "v-57.6", "h38.2" ] ],
+    [ "btn2:2.l", "uno1:11", "green", [ "v-38.4", "h19" ] ]
+  ],
+  "dependencies": {}
+}
