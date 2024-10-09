@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "author": "Sergey Polevoy",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno1", "top": 106.2, "left": -77.4, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -147.2,
+      "left": -71.2,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": -125.8,
+      "left": 251.4,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-ir-receiver",
+      "id": "ir1",
+      "top": 157.02,
+      "left": 358.35,
+      "rotate": 90,
+      "attrs": {}
+    },
+    { "type": "wokwi-ir-remote", "id": "remote1", "top": -163.2, "left": 432, "attrs": {} },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": -28.04, "left": 374.4, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": -27.4, "left": 268.6, "rotate": 180, "attrs": {} }
+  ],
+  "connections": [
+    [ "lcd1:GND", "uno1:GND.2", "black", [ "h-67.2", "v480", "h226.5" ] ],
+    [ "lcd1:VCC", "uno1:5V", "red", [ "h-57.6", "v460.9", "h207.4" ] ],
+    [ "lcd1:SDA", "uno1:A4.2", "gold", [ "h-48", "v134.6", "h105.6" ] ],
+    [ "lcd1:SCL", "uno1:A5.2", "orange", [ "h-38.4", "v115.5", "h115.2" ] ],
+    [ "uno1:9", "servo1:PWM", "green", [ "v-67.2", "h10.4" ] ],
+    [ "uno1:3", "ir1:DAT", "green", [ "v-19.2", "h138.4", "v96" ] ],
+    [ "ir1:VCC", "uno1:5V", "red", [ "h-19.2", "v153.6", "h-240" ] ],
+    [ "ir1:GND", "uno1:GND.2", "black", [ "h-28.8", "v172.8", "h-230.4" ] ],
+    [ "gnd1:GND", "servo1:GND", "black", [ "v19.2", "h48" ] ],
+    [ "vcc1:VCC", "servo1:V+", "red", [ "v28.8", "h-48" ] ]
+  ],
+  "dependencies": {}
+}

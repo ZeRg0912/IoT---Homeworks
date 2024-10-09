@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "author": "Sergey Polevoy",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -278.1,
+      "left": -5.4,
+      "attrs": { "temperature": "80", "humidity": "100" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht3",
+      "top": -278.1,
+      "left": 167.4,
+      "attrs": { "temperature": "-40", "humidity": "0" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht4",
+      "top": -278.1,
+      "left": 109.8,
+      "attrs": { "temperature": "-40", "humidity": "0" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht5",
+      "top": -278.1,
+      "left": 52.2,
+      "attrs": { "temperature": "80", "humidity": "100" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht2",
+      "top": -278.1,
+      "left": 225,
+      "attrs": { "temperature": "80", "humidity": "100" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht6",
+      "top": -278.1,
+      "left": 282.6,
+      "attrs": { "temperature": "-40", "humidity": "0" }
+    }
+  ],
+  "connections": [
+    [ "dht1:GND", "dht5:GND", "black", [ "v19.2", "h57.6" ] ],
+    [ "dht5:GND", "dht4:GND", "black", [ "v19.2", "h57.6" ] ],
+    [ "dht4:GND", "dht3:GND", "black", [ "v19.2", "h9.6" ] ],
+    [ "dht1:VCC", "dht5:VCC", "red", [ "v28.8", "h57.6", "v-28.8" ] ],
+    [ "dht5:VCC", "dht4:VCC", "red", [ "v28.8", "h9.6" ] ],
+    [ "dht4:VCC", "dht3:VCC", "red", [ "v28.8", "h48" ] ],
+    [ "dht3:GND", "dht2:GND", "black", [ "v19.2", "h57.6" ] ],
+    [ "dht2:GND", "dht6:GND", "black", [ "v19.2", "h9.6" ] ],
+    [ "dht3:VCC", "dht2:VCC", "red", [ "v28.8", "h28.8" ] ],
+    [ "dht2:VCC", "dht6:VCC", "red", [ "v28.8", "h9.6" ] ],
+    [ "dht6:SDA", "uno:2", "green", [ "v115.2", "h-47.9" ] ],
+    [ "dht2:SDA", "uno:3", "green", [ "v105.6", "h-19.1" ] ],
+    [ "dht3:SDA", "uno:4", "green", [ "v105.6", "h28.9" ] ],
+    [ "dht4:SDA", "uno:5", "green", [ "v115.2", "h67.3" ] ],
+    [ "dht5:SDA", "uno:6", "green", [ "v124.8", "h105.7" ] ],
+    [ "dht1:SDA", "uno:7", "green", [ "v134.4", "h105.7" ] ]
+  ],
+  "dependencies": {}
+}

@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "author": "Sergey Polevoy",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-microsd-card",
+      "id": "sd1",
+      "top": -131.83,
+      "left": 83.47,
+      "rotate": 90,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "stepper1",
+      "top": -274.79,
+      "left": 211.63,
+      "attrs": { "size": "17", "display": "steps", "arrow": "black" }
+    }
+  ],
+  "connections": [
+    [ "sd1:VCC", "uno:5V", "red", [ "v48", "h-134.54", "v249.6", "h19.2" ] ],
+    [ "sd1:SCK", "uno:13", "green", [ "v0" ] ],
+    [ "sd1:GND", "uno:GND.1", "black", [ "v48", "h-19.01" ] ],
+    [ "sd1:DI", "uno:11", "gold", [ "v38.4", "h28.89" ] ],
+    [ "sd1:CS", "uno:10", "orange", [ "v28.8", "h57.54" ] ],
+    [ "sd1:DO", "uno:12", "#8f4814", [ "v57.6", "h-9.71" ] ],
+    [ "uno:7", "stepper1:A-", "green", [ "v0" ] ],
+    [ "uno:6", "stepper1:A+", "green", [ "v-95.4", "h22.3" ] ],
+    [ "uno:5", "stepper1:B+", "green", [ "v-85.8", "h32" ] ],
+    [ "uno:4", "stepper1:B-", "green", [ "v-76.2", "h32.1" ] ]
+  ],
+  "dependencies": {}
+}

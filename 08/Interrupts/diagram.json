@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "author": "Sergey Polevoy",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno1", "top": 197.52, "left": 34.87, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 182.3,
+      "left": 368.3,
+      "rotate": 90,
+      "attrs": { "color": "green", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 182.3,
+      "left": 320.3,
+      "rotate": 90,
+      "attrs": { "color": "red", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "stepper1",
+      "top": -154.07,
+      "left": 169.7,
+      "attrs": { "size": "17", "display": "steps", "arrow": "black" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 138.35,
+      "left": 432,
+      "attrs": { "value": "300" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 157.55,
+      "left": 432,
+      "attrs": { "value": "300" }
+    }
+  ],
+  "connections": [
+    [ "stepper1:A-", "uno1:7", "green", [ "v0", "h-19.2" ] ],
+    [ "stepper1:A+", "uno1:6", "green", [ "v9.6", "h-9.6" ] ],
+    [ "uno1:5", "stepper1:B+", "green", [ "v-153", "h3.2" ] ],
+    [ "uno1:4", "stepper1:B-", "green", [ "v-143.4", "h12.9" ] ],
+    [ "btn2:1.r", "uno1:5V", "red", [ "v182.6", "h-38.4" ] ],
+    [ "btn1:1.r", "uno1:5V", "red", [ "v182.6", "h-48" ] ],
+    [ "btn2:2.l", "uno1:2", "green", [ "v-9.6", "h-57.8" ] ],
+    [ "btn1:2.l", "uno1:3", "green", [ "v-28.8", "h-115.4" ] ],
+    [ "r1:1", "btn1:2.l", "green", [ "v0", "h-38.4" ] ],
+    [ "r2:1", "btn2:2.l", "green", [ "v0", "h-86.4" ] ],
+    [ "r1:2", "r2:2", "black", [ "v0", "h8.4", "v19.2" ] ],
+    [ "r2:2", "uno1:GND.2", "black", [ "v0", "h8.4", "v278.4", "h-288" ] ]
+  ],
+  "dependencies": {}
+}
